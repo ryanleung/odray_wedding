@@ -1,0 +1,17 @@
+<h1>Guests</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number of Plus Ones</th>
+  </tr>
+ 
+  <% @guests.each do |guest| %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.plusOneAmount %></td>
+      <td><%= guest.rsvpCode %></td>
+      <td><%= guest.responded %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  plusOneAmount: 1
+  rsvpCode: MyString
+  responded: false
+
+two:
+  name: MyString
+  plusOneAmount: 1
+  rsvpCode: MyString
+  responded: false

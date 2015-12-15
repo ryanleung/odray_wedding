@@ -1,0 +1,15 @@
+<%= form_for :guest, url: guests_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :plusOneAmount %><br>
+    <%= f.number_field :plusOneAmount %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
