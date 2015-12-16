@@ -7,3 +7,15 @@
   <strong>Amount Of Plus Ones:</strong>
   <%= @guest.plusOneAmount %>
 </p>
+
+<p>
+  <strong>Responded:</strong>
+  <%= @guest.responded %>
+</p>
+ 
+<p>
+  <strong>RSVP code:</strong>
+  <%= @guest.rsvpCode %>
+</p>
+
+<%= link_to 'Back to guest list', guests_path %>

@@ -4,14 +4,24 @@
   <tr>
     <th>Name</th>
     <th>Number of Plus Ones</th>
+    <th>+1's</th>
+    <th>Responded?</th>
+    <th>RSVP Code</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
  
   <% @guests.each do |guest| %>
     <tr>
       <td><%= guest.name %></td>
       <td><%= guest.plusOneAmount %></td>
-      <td><%= guest.rsvpCode %></td>
+      <td></td>
       <td><%= guest.responded %></td>
+      <td><%= guest.rsvpCode %></td>
+      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+      <td><%= link_to "Delete", guest_path(guest), method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'New guest', new_guest_path %>
