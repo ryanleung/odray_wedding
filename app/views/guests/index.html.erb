@@ -2,6 +2,7 @@
  
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Number of Plus Ones</th>
     <th>+1's</th>
@@ -11,8 +12,9 @@
     <th>Delete</th>
   </tr>
  
-  <% @guests.each do |guest| %>
+  <% @guests.each_with_index do |guest, index| %>
     <tr>
+      <td><%= index + 1 %>.   </td>
       <td><%= guest.name %></td>
       <td><%= guest.plusOneAmount %></td>
       <td></td>
