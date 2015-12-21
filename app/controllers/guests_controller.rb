@@ -32,9 +32,19 @@ class GuestsController < ApplicationController
   end
 
   def create
+    plus_one_names = params[:plus_one_name]
+
     @guest = Guest.new(guest_params)
- 
+
     @guest.save
+    plus_one_names.each do |name|
+      if name
+        plus_one = PlusOne.new
+        plus_one.name = name 
+        plus_one.guest = @guest
+        plus_one.save 
+      end
+    end
     redirect_to @guest
   end
 

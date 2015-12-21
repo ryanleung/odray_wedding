@@ -5,6 +5,7 @@ class CreateGuests < ActiveRecord::Migration
       t.integer :plusOneAmount
       t.string :rsvpCode
       t.boolean :responded
+      t.boolean :rsvped
 
       t.timestamps
     end
