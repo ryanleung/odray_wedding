@@ -4,8 +4,8 @@ class CreateGuests < ActiveRecord::Migration
       t.string :name
       t.integer :plusOneAmount
       t.string :rsvpCode
-      t.boolean :responded
-      t.boolean :rsvped
+      t.boolean :responded, default: false
+      t.boolean :rsvped, default: false
 
       t.timestamps
     end

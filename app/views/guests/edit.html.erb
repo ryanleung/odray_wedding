@@ -22,8 +22,14 @@
   </p>
  
   <p>
-    <%= f.label :plusOneAmount %><br>
-    <%= f.number_field :plusOneAmount %>
+    <%= f.label :plusOnes %><br>
+    <ol>
+      <% @guest.plus_ones.each do |plusOne| %>
+      <li>
+        <%= text_field_tag "plus_one_name[]", plusOne.name %>
+      </li>
+      <% end %>
+    </ol>
   </p>
 
   <p>
@@ -33,7 +39,7 @@
 
   <p>
     <%= f.label :rsvpCode %><br>
-    <%= f.text_field :rsvpCode %>
+    <%= f.text_field :rsvpCode, value: @guest.rsvpCode %>
   </p>
  
   <p>

@@ -4,8 +4,12 @@
 </p>
  
 <p>
-  <strong>Amount Of Plus Ones:</strong>
-  <%= @guest.plusOneAmount %>
+  <strong>Plus Ones</strong>
+  <ol>
+  	<% @guest.plus_ones.each do |plusOne| %>
+  		<li><%= plusOne.name %></li>
+  	<% end %>
+  </ol>
 </p>
 
 <p>

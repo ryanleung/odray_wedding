@@ -20,15 +20,15 @@ ActiveRecord::Schema.define(version: 20151215065538) do
     t.string   "name"
     t.integer  "plusOneAmount"
     t.string   "rsvpCode"
-    t.boolean  "responded"
-    t.boolean  "rsvped"
+    t.boolean  "responded",     default: false
+    t.boolean  "rsvped",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "plus_ones", force: true do |t|
     t.string   "name"
-    t.boolean  "rsvped"
+    t.boolean  "rsvped",     default: false
     t.integer  "guest_id"
     t.datetime "created_at"
     t.datetime "updated_at"

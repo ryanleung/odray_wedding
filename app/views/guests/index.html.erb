@@ -4,8 +4,7 @@
   <tr>
     <th></th>
     <th>Name</th>
-    <th>Number of Plus Ones</th>
-    <th>+1's</th>
+    <th>Plus Ones</th>
     <th>Responded?</th>
     <th>RSVP Code</th>
     <th>Edit</th>
@@ -16,8 +15,11 @@
     <tr>
       <td><%= index + 1 %>.   </td>
       <td><%= guest.name %></td>
-      <td><%= guest.plusOneAmount %></td>
-      <td></td>
+      <td>
+        <% guest.plus_ones.each do |plusOne| %>
+          <li><%= plusOne.name %></li>
+        <% end %>
+      </td>
       <td><%= guest.responded %></td>
       <td><%= guest.rsvpCode %></td>
       <td><%= link_to "Edit", edit_guest_path(guest) %></td>
