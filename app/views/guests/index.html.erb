@@ -1,12 +1,15 @@
 <h1>Guests</h1>
  
-<table>
+<table border="1" style="width:100%">
   <tr>
     <th></th>
     <th>Name</th>
+    <th>Email</th>
     <th>Plus Ones</th>
     <th>Responded?</th>
+    <th>RSVPed?</th>
     <th>RSVP Code</th>
+    <th>Comments</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -15,13 +18,24 @@
     <tr>
       <td><%= index + 1 %>.   </td>
       <td><%= guest.name %></td>
+      <td><%= guest.email %></td>
       <td>
         <% guest.plus_ones.each do |plusOne| %>
-          <li><%= plusOne.name %></li>
+          <% if plusOne.rsvped %>
+            <div style="color:green">
+              <%= plusOne.name %>
+            </div>
+          <% else %>
+            <div style="color:red">
+              <%= plusOne.name %>
+            </div>
+          <% end %>
         <% end %>
       </td>
       <td><%= guest.responded %></td>
+      <td><%= guest.rsvped %></td>
       <td><%= guest.rsvpCode %></td>
+      <td><%= guest.comments %></td>
       <td><%= link_to "Edit", edit_guest_path(guest) %></td>
       <td><%= link_to "Delete", guest_path(guest), method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>

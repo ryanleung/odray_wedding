@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :guests
 
   root :to => "guests#index"
+
+  get 'api/respond' => 'api#respond'
+  post 'api/submit_form' => 'api#submit_form'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
