@@ -19,6 +19,7 @@ class ApiController < ApplicationController
       render status: 404, json: {
         error: "Could not find guest"
       }
+    end
   end
 
   def submit_form
