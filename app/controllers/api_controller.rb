@@ -4,16 +4,21 @@ class ApiController < ApplicationController
   def respond
     rsvpCode = params[:rsvpCode]
     guest = Guest.find_by_rsvpCode(rsvpCode)
-    render json: {
-      error: nil,
-      data: {
-        id: guest.id,
-        name: guest.name,
-        plusOnes: guest.plus_ones.map { |plusOne| {id: plusOne.id, name: plusOne.name, rsvped: plusOne.rsvped} },
-        email: guest.email,
-        comments: guest.comments
+    if guest
+      render json: {
+        error: nil,
+        data: {
+          id: guest.id,
+          name: guest.name,
+          plusOnes: guest.plus_ones.map { |plusOne| {id: plusOne.id, name: plusOne.name, rsvped: plusOne.rsvped} },
+          email: guest.email,
+          comments: guest.comments
+        }
       }
-    }
+    else
+      render status: 404, json: {
+        error: "Could not find guest"
+      }
   end
 
   def submit_form
