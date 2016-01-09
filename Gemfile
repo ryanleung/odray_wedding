@@ -40,3 +40,5 @@ gem 'rails_12factor', group: :production
 # Use debugger
 gem 'byebug', group: [:development, :test]
 
+gem 'rack-cors', :require => 'rack/cors'
+
